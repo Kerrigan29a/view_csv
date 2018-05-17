@@ -2,7 +2,11 @@
 
 [![Build Status](https://travis-ci.org/Kerrigan29a/view_csv.svg)](https://travis-ci.org/Kerrigan29a/view_csv)
 [![Build status](https://ci.appveyor.com/api/projects/status/n0iqx32muwwyhyoh?svg=true)](https://ci.appveyor.com/project/Kerrigan29a/view-csv)
-[![GoDoc](https://godoc.org/github.com/Kerrigan29a/recipe?status.svg)](https://godoc.org/github.com/Kerrigan29a/recipe)
+[![Go Report Card](https://goreportcard.com/badge/github.com/kerrigan29a/view_csv)](https://goreportcard.com/report/github.com/kerrigan29a/view_csv)
+[![GolangCI](https://golangci.com/badges/github.com/kerrigan29a/view_csv.svg)](https://golangci.com)
+[![Maintainability](https://api.codeclimate.com/v1/badges/b1fb717a03db80410d44/maintainability)](https://codeclimate.com/github/Kerrigan29a/view_csv/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/b1fb717a03db80410d44/test_coverage)](https://codeclimate.com/github/Kerrigan29a/view_csv/test_coverage)
+[![GoDoc](https://godoc.org/github.com/Kerrigan29a/view_csv?status.svg)](https://godoc.org/github.com/Kerrigan29a/view_csv)
 
 This is an example program to test the integration of [drawille-go](https://github.com/Kerrigan29a/drawille-go) with [tview](https://github.com/rivo/tview) and [tcell](https://github.com/gdamore/tcell)
 
