@@ -1,14 +1,29 @@
 language: go
 go:
-  - "1.10.x"
+  - 1.10.x
   - master
   - tip
 os:
   - linux
 sudo: false
 install:
-  - go get golang.org/x/tools/cmd/cover
-  - go get github.com/mattn/goveralls
+  - go get -v golang.org/x/tools/cmd/stringer
+  - go get -v github.com/golang/dep/cmd/dep
+  - go get -v github.com/codeclimate/test-reporter
+  - go get -v golang.org/x/tools/cmd/cover
+  - go get -v github.com/mattn/goveralls
+  #- cd $GOPATH/src/golang.org/x/tools/cmd/stringer/ && go install
+  #- cd $GOPATH/src/github.com/golang/dep/cmd/dep && go install
+  #- cd $GOPATH/src/github.com/codeclimate/test-reporter && go install
+  - "$HOME/gopath/bin/dep ensure -v -vendor-only"
+before_script:
+  - "$HOME/gopath/bin/test-reporter before-build"
 script:
-  - go test -v -covermode=count -coverprofile=coverage.out
-  - $HOME/gopath/bin/goveralls -coverprofile=coverage.out -service=travis-ci
+  - go test -v -covermode=count -coverprofile=coveralls_coverage.out
+  - go test -v -coverprofile=c.out
+after_script:
+  - "$HOME/gopath/bin/goveralls -coverprofile=coveralls_coverage.out -service=travis-ci"
+  - "$HOME/gopath/bin/test-reporter after-build --exit-code $TRAVIS_TEST_RESULT"
+env:
+  global:
+    secure: Cvys2CUiEOpNQhfWeYKqceUx+FFD2Rpj6QmudhHHd8j/aE/ChBZpwTzABszGKVocCA7nRLAQj7zvDgqLC47MfZXh0faUsYybC9ro4oarc3o36Rc6KD8qt2JcJ2fYTQzDsMT68WVS0IHyrt126tar2aC44jp0o1R7e5TQNkBG77yKCFl4CooiourTB+yW/MzlhVx5Rc62VpL7kfYEra4OiYbfh+6YEwEKMxMDr/omx2hGSUWQjef+rKI8qusV+NDmgI3grTLo5k1Q0R8ICz6sFtsN09WYC5qkpH66pzTgopY3c5ELVB+fM/ZNWZtqT9WBh4g87+BBjq0sS3gTdHKXyLzIF087jKDKQPJa/gALQ1HnSAtCDid1DCeSh2sRjUNsl4QXCxUU7Va6YzTXgwSOSiiw2A90AkZAuNLV/p9Ihz6CZVgrgn0u132Xok4VM2SsZQh8bPB9BPqc1WPGp+54WQLSWzz30svwVa4BDCvL1MmrdAQ0V6HsUBb1td7eX/K0pIj3LpFWx2zuLJbTTvb9ua9owbwNGSqT7OO0mvvZQla7ddoxTCQo7fxspjy9BBjjfvM7TuzvrSpV0zyKHheaRFYCshedPdQXBM3nv0o3TPdGqOEENkRU9j+d0BzBJgEKLp8j6wRUimkx9hSyY4iQ4Db8E0lDDMng8Dq2D5DDtnQ=
