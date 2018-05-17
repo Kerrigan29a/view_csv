@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/Kerrigan29a/view_csv.svg)](https://travis-ci.org/Kerrigan29a/view_csv)
 [![Build status](https://ci.appveyor.com/api/projects/status/n0iqx32muwwyhyoh?svg=true)](https://ci.appveyor.com/project/Kerrigan29a/view-csv)
+[![Coverage Status](https://coveralls.io/repos/github/Kerrigan29a/view_csv/badge.svg)](https://coveralls.io/github/Kerrigan29a/view_csv)
 [![Go Report Card](https://goreportcard.com/badge/github.com/kerrigan29a/view_csv)](https://goreportcard.com/report/github.com/kerrigan29a/view_csv)
 [![GolangCI](https://golangci.com/badges/github.com/kerrigan29a/view_csv.svg)](https://golangci.com)
 [![Maintainability](https://api.codeclimate.com/v1/badges/b1fb717a03db80410d44/maintainability)](https://codeclimate.com/github/Kerrigan29a/view_csv/maintainability)

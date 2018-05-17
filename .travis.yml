@@ -2,10 +2,13 @@ language: go
 go:
   - "1.10.x"
   - master
+  - tip
 os:
-- linux
+  - linux
 sudo: false
-before_install:
-- go get -v golang.org/x/tools/cmd/stringer
+install:
+  - go get golang.org/x/tools/cmd/cover
+  - go get github.com/mattn/goveralls
 script:
-- go test -v
+  - go test -v -covermode=count -coverprofile=coverage.out
+  - $HOME/gopath/bin/goveralls -coverprofile=coverage.out -service=travis-ci
