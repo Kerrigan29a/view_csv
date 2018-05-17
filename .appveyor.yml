@@ -1,0 +1,21 @@
+version: "{build}"
+
+platform: x64
+
+clone_folder: c:\gopath\src\github.com\Kerrigan29a\view_csv
+
+environment:
+  GOPATH: c:\gopath
+
+install:
+  - echo %PATH%
+  - echo %GOPATH%
+  - set PATH=%GOPATH%\bin;c:\go\bin;%PATH%
+  - go version
+  - go env
+
+build_script:
+  - go build
+
+test_script:
+  - go test -v

@@ -1,0 +1,8 @@
+language: go
+os:
+- linux
+sudo: false
+before_install:
+- go get -v golang.org/x/tools/cmd/stringer
+script:
+- go test -v
