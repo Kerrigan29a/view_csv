@@ -14,3 +14,6 @@ This is an example program to test the integration of [drawille-go](https://gith
 # Documentation
 
 Documentation is available at [godoc](https://godoc.org/github.com/Kerrigan29a/view_csv)
+
+# Screenshot
+![screenshot](screenshot.png)
