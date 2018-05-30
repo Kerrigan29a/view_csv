@@ -7,5 +7,6 @@
 # Test binary, build with `go test -c`
 *.test
 
-# PyCharm
+# Editors and IDEs
 .idea/
+.vscode/
