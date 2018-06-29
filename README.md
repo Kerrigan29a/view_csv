@@ -15,5 +15,9 @@ This is an example program to test the integration of [drawille-go](https://gith
 
 Documentation is available at [godoc](https://godoc.org/github.com/Kerrigan29a/view_csv)
 
-# Screenshot
+# Example
+
+```shell
+make run ARGS="-f ibex35.csv -n Close"
+```
 ![screenshot](screenshot.png)

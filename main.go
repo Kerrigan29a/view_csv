@@ -7,14 +7,22 @@ import (
 	"os"
 )
 
-var version string
+var (
+	version = "dev"
+	commit  = "none"
+	date    = "unknown"
+)
 
 func parseArgs(path *string, name *string, column *int, hasColumnNames *bool) {
 	flag.Usage = func() {
-		fmt.Printf("Usage of %s:\n", os.Args[0])
+		fmt.Println("")
+		fmt.Printf("Usage:  %s [OPTIONS] -f csv_file\n", os.Args[0])
 		flag.PrintDefaults()
 		fmt.Println("")
 		fmt.Printf("Version: %s\n", version)
+		fmt.Printf("Commit: %s\n", commit)
+		fmt.Printf("Date: %s\n", date)
+		fmt.Println("")
 	}
 	flag.StringVar(path, "f", "", "File path")
 	flag.StringVar(name, "n", "", "Column name. Implies -1 flag")
