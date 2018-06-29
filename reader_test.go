@@ -25,7 +25,7 @@ func createCSV(t *testing.T, txt string) string {
 }
 
 func TestNewReader(t *testing.T) {
-	path := createCSV(t, "hi wolrd")
+	path := createCSV(t, "hi world")
 	defer os.Remove(path)
 
 	r1 := NewReader(path, false)
